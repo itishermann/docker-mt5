@@ -7,6 +7,7 @@ Based on [wine-x11-novnc-docker](https://hub.docker.com/r/solarkennedy/wine-x11-
 docker run --rm -p 8080:8080 itishermann/docker-mt5
 ```
 Open your browser at http://localhost:8080 and voilà
+![Screenshot](https://raw.githubusercontent.com/itishermann/docker-mt5/master/screenshot.png)
 
 ## Nginx proxy
 If you want to use it behind a proxy and use a basic pasword protection for remote access, take a look at [noVNC's Documentation](https://github.com/novnc/noVNC/wiki/Proxying-with-nginx)
