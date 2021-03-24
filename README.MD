@@ -11,12 +11,15 @@ Open your browser at http://localhost:8080 and voilà
 ## Nginx proxy
 If you want to use it behind a proxy and use a basic pasword protection for remote access, take a look at [noVNC's Documentation](https://github.com/novnc/noVNC/wiki/Proxying-with-nginx)
 
+For the basic http auth, take a look at [Nginx Documentation](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/)
+
 if using this image
 
 ```
 server {
     server_name <mt5.example.com>;
-
+    auth_basic           "Restricted Area";
+    auth_basic_user_file .htpasswd;
     location / {
         proxy_pass http://127.0.0.1:8080;
         proxy_http_version 1.1;
