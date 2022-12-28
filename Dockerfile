@@ -1,6 +1,7 @@
 FROM solarkennedy/wine-x11-novnc-docker
 ENV WINEPREFIX /root/prefix64
 ENV WINEARCH win64
-COPY ["MetaTrader 5", "/root/prefix64/drive_c/Program Files/MetaTrader 5"]
-COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+# COPY install_required_for_mt.sh /
+# RUN /install_required_for_mt.sh
+
 EXPOSE 8080
