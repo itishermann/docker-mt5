@@ -1,6 +1,7 @@
 version: "3.3"
 services:
   mt5:
+    # image: solarkennedy/wine-x11-novnc-docker
     image: gcr.io/ticker-beats/docker-mt5:Dark-Venus-MT5-v1.1
     ports:
       - "8081:8080"
@@ -8,14 +9,10 @@ services:
       WINEPREFIX: "/root/prefix64"
       WINEARCH: win64
     volumes:
-      - "/home/sander/projects/mt5-docker-test001:/root/metatrader5/"
-      - "./supervisord.conf:/etc/supervisor/conf.d/supervisord.conf"
+      - /home/sander/projects/Metatrader5-bin/:/root/metatrader5/
+      - /home/sander/projects/mql5:/root/metatrader5/MQL5/
+      - ./supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
       - ./common.ini:/root/prefix64/drive_c/myconfiguration.ini
-      - "/home/sander/projects/auto-trading-support-tools/setup_monitoring_ea.sh:/root/setup_monitoring_ea.sh"
-      - "/home/sander/projects/auto-trading-support-tools/common.sh:/root/common.sh"
-      - "/home/sander/projects/auto-trading-support-tools/templates/config:/root/templates/config"
-      - "/home/sander/projects/auto-trading-support-tools/MQL5/Experts/Advisors/TerminalMonitoring.mq5:/root/metatrader5/MQL5/Experts/Advisors/TerminalMonitoring.mq5"
-      - "/home/sander/projects/auto-trading-support-tools/MQL5/Experts/Advisors/TerminalMonitoring.ex5:/root/metatrader5/MQL5/Experts/Advisors/TerminalMonitoring.ex5"
     deploy:
       resources:
         limits:
