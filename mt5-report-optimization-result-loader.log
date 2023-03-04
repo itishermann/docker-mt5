@@ -1,0 +1,16 @@
+{"L":"INFO","T":"2022-12-28T20:37:50.000-0600","M":"Starting service"}
+{"L":"INFO","T":"2022-12-28T20:37:50.000-0600","M":"Settings loaded","settings":{"database_dsn":"postgres://sander:sander@personal-dev/metatrader5?sslmode=disable"}}
+{"L":"INFO","T":"2022-12-30T15:04:33.279-0600","M":"Starting service"}
+{"L":"INFO","T":"2022-12-30T15:04:33.280-0600","M":"Settings loaded","settings":{"database_dsn":"postgres://sander:sander@personal-dev/metatrader5?sslmode=disable"}}
+{"L":"INFO","T":"2022-12-30T16:40:03.420-0600","M":"Starting service"}
+{"L":"INFO","T":"2022-12-30T16:40:03.421-0600","M":"Settings loaded","settings":{"database_dsn":"postgres://sander:sander@personal-dev/metatrader5?sslmode=disable"}}
+{"L":"INFO","T":"2022-12-30T16:41:28.475-0600","M":"Starting service"}
+{"L":"INFO","T":"2022-12-30T16:41:28.475-0600","M":"Settings loaded","settings":{"database_dsn":"postgres://sander:sander@personal-dev/metatrader5?sslmode=disable"}}
+{"L":"INFO","T":"2022-12-30T16:41:36.175-0600","M":"Starting service"}
+{"L":"INFO","T":"2022-12-30T16:41:36.175-0600","M":"Settings loaded","settings":{"database_dsn":"postgres://sander:sander@personal-dev/metatrader5?sslmode=disable"}}
+{"L":"INFO","T":"2022-12-30T16:43:54.896-0600","M":"Starting service"}
+{"L":"INFO","T":"2022-12-30T16:43:54.897-0600","M":"Settings loaded","settings":{"database_dsn":"postgres://sander:sander@personal-dev/metatrader5?sslmode=disable"}}
+{"L":"INFO","T":"2022-12-30T16:44:04.764-0600","M":"Starting service"}
+{"L":"INFO","T":"2022-12-30T16:44:04.765-0600","M":"Settings loaded","settings":{"database_dsn":"postgres://sander:sander@personal-dev/metatrader5?sslmode=disable"}}
+{"L":"INFO","T":"2022-12-30T16:51:56.821-0600","M":"Starting service"}
+{"L":"INFO","T":"2022-12-30T16:51:56.821-0600","M":"Settings loaded","settings":{"database_dsn":"postgres://sander:sander@personal-dev/metatrader5?sslmode=disable"}}

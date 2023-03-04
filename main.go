@@ -2,6 +2,7 @@ package main
 
 import (
 	"io"
+	"net/http"
 	"os"
 	"runtime"
 	"time"
@@ -13,6 +14,8 @@ import (
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+
+	"github.com/labstack/echo/v4"
 )
 
 type WriteSyncer struct {
@@ -125,4 +128,11 @@ func main() {
 		zap.L().Fatal(err.Error())
 	}
 	zap.L().Info("Settings loaded", zap.Any("settings", config))
+
+	e := echo.New()
+	// e.Use(echozap.ZapLogger(logger))
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Hello, World!")
+	})
+	e.Logger.Fatal(e.Start(":3130"))
 }
