@@ -11,9 +11,9 @@ services:
       WINEARCH: win64
     volumes:
       - ./supervisord-kennedy.conf:/etc/supervisor/supervisord.conf
-      - /home/sander/metatrader5/mt5-win-testing-048:/root/metatrader5
+      # - /home/sander/metatrader5/mt5-win-testing-048:/root/metatrader5
       - ../mt5-config/common.ini:/root/prefix64/drive_c/myconfiguration.ini
-      - /home/sander/metatrader5/mt5-win-testing-048-monitor:/root/metatrader5-monitor
+      # - /home/sander/metatrader5/mt5-win-testing-048-monitor:/root/metatrader5-monitor
       - ../mt5-config/common-monitor.ini:/root/prefix64/drive_c/myconfiguration-monitor.ini
 
       # MT5, base files, can be read-only
