@@ -1,11 +1,11 @@
 version: "3.3"
 services:
   mt5:
-    container_name: mt5-003
+    container_name: mt5-004
     # image: solarkennedy/wine-x11-novnc-docker
     image: gcr.io/ticker-beats/docker-mt5:latest
     ports:
-      - "30003:8080"
+      - "30004:8080"
     environment: 
       WINEPREFIX: "/root/prefix64"
       WINEARCH: win64
@@ -49,28 +49,28 @@ services:
 
 
       # MT5, container files
-      - /home/sander/docker-server/mt5-003/Bases/:/root/metatrader5/Bases
-      - /home/sander/docker-server/mt5-003/Config/:/root/metatrader5/Config
-      - /home/sander/docker-server/mt5-003/Profiles/:/root/metatrader5/Profiles
+      - /home/sander/docker-server/mt5-004/Bases/:/root/metatrader5/Bases
+      - /home/sander/docker-server/mt5-004/Config/:/root/metatrader5/Config
+      - /home/sander/docker-server/mt5-004/Profiles/:/root/metatrader5/Profiles
       # monitor
-      - /home/sander/docker-server/mt5-003-monitor/Bases/:/root/metatrader5-monitor/Bases
-      - /home/sander/docker-server/mt5-003-monitor/Config/:/root/metatrader5-monitor/Config
-      - /home/sander/docker-server/mt5-003-monitor/Profiles/:/root/metatrader5-monitor/Profiles
+      - /home/sander/docker-server/mt5-004-monitor/Bases/:/root/metatrader5-monitor/Bases
+      - /home/sander/docker-server/mt5-004-monitor/Config/:/root/metatrader5-monitor/Config
+      - /home/sander/docker-server/mt5-004-monitor/Profiles/:/root/metatrader5-monitor/Profiles
       # MQL5, container files
-      - /home/sander/docker-server/mt5-003/logs/:/root/metatrader5/logs
-      - /home/sander/docker-server/mt5-003/MQL5/Logs/:/root/metatrader5/MQL5/Logs
-      - /home/sander/docker-server/mt5-003/MQL5/Files/:/root/metatrader5/MQL5/Files
-      - /home/sander/docker-server/mt5-003/MQL5/Presets/:/root/metatrader5/MQL5/Presets
+      - /home/sander/docker-server/mt5-004/logs/:/root/metatrader5/logs
+      - /home/sander/docker-server/mt5-004/MQL5/Logs/:/root/metatrader5/MQL5/Logs
+      - /home/sander/docker-server/mt5-004/MQL5/Files/:/root/metatrader5/MQL5/Files
+      - /home/sander/docker-server/mt5-004/MQL5/Presets/:/root/metatrader5/MQL5/Presets
       - /home/sander/docker-server/dark_venus_set_files/dark-venus-gbpusd-h1-2.set:/root/metatrader5/MQL5/Presets/dark_venus_preset.set
-      - /home/sander/docker-server/mt5-003/MQL5/Profiles/:/root/metatrader5/MQL5/Profiles
-      - /home/sander/docker-server/mt5-003/MQL5/experts.dat:/root/metatrader5/MQL5/experts.dat
+      - /home/sander/docker-server/mt5-004/MQL5/Profiles/:/root/metatrader5/MQL5/Profiles
+      - /home/sander/docker-server/mt5-004/MQL5/experts.dat:/root/metatrader5/MQL5/experts.dat
       # monitor
-      - /home/sander/docker-server/mt5-003-monitor/logs/:/root/metatrader5-monitor/logs
-      - /home/sander/docker-server/mt5-003-monitor/MQL5/Logs/:/root/metatrader5-monitor/MQL5/Logs
-      - /home/sander/docker-server/mt5-003-monitor/MQL5/Files/:/root/metatrader5-monitor/MQL5/Files
-      - /home/sander/docker-server/mt5-003-monitor/MQL5/Presets/:/root/metatrader5-monitor/MQL5/Presets
-      - /home/sander/docker-server/mt5-003-monitor/MQL5/Profiles/:/root/metatrader5-monitor/MQL5/Profiles
-      - /home/sander/docker-server/mt5-003-monitor/MQL5/experts.dat:/root/metatrader5-monitor/MQL5/experts.dat
+      - /home/sander/docker-server/mt5-004-monitor/logs/:/root/metatrader5-monitor/logs
+      - /home/sander/docker-server/mt5-004-monitor/MQL5/Logs/:/root/metatrader5-monitor/MQL5/Logs
+      - /home/sander/docker-server/mt5-004-monitor/MQL5/Files/:/root/metatrader5-monitor/MQL5/Files
+      - /home/sander/docker-server/mt5-004-monitor/MQL5/Presets/:/root/metatrader5-monitor/MQL5/Presets
+      - /home/sander/docker-server/mt5-004-monitor/MQL5/Profiles/:/root/metatrader5-monitor/MQL5/Profiles
+      - /home/sander/docker-server/mt5-004-monitor/MQL5/experts.dat:/root/metatrader5-monitor/MQL5/experts.dat
     deploy:
       resources:
         limits:
