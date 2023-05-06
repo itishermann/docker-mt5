@@ -1,0 +1,144 @@
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 5010817333*
+Password : wrpn7xwj
+Investor : 0utwuiej
+Capital  : 10k
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 66965904*
+Password : p1vwaqnh
+Investor : fkhwd1ch
+Capital  : 10k
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 66965915*
+Password : kwyeoqh4
+Investor : hxh8yslx
+Capital  : 10k
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 66965924*
+Password : xau7tdwv
+Investor : i2gzfbvh
+Capital  : 10k
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 5010817398*
+Password : 7ulamtoi
+Investor : yhtowv0s
+Capital  : 10k
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 5010817410*
+Password : 8gdrsrmi
+Investor : ahpwk2xx
+Capital  : 10k
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 5010817424*
+Password : kujo3acp
+Investor : 5ydmkjiy
+Capital  : 10k
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 5010817437
+Password : lgspv0eh
+Investor : gmhdip0b
+Capital  : 10k
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 69273247*
+Password : yu0itwjv
+Investor : m2czvmdv
+Capital  : 650
+Leverage : 1:25
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 69273309*
+Password : pmt7tsil
+Investor : tyh2eguu
+Capital  : 650
+Leverage : 1:25
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 5013090913*
+Password : h0nvvuic
+Investor : dd3antnp
+Capital  : 650
+Leverage : 1:25
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 5013090921*
+Password : zjk7dzti
+Investor : kviji2zi
+Capital  : 650
+Leverage : 1:25
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 5013090932*
+Password : lsvhtif5
+Investor : xiot2cxa
+Capital  : 650
+Leverage : 1:25
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 5013090946*
+Password : fhpyna0y
+Investor : xxi6wzht
+Capital  : 650
+Leverage : 1:25
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 69273365*
+Password : h7rlgudt
+Investor : bj0shjbe
+Capital  : 650
+Leverage : 1:25
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 69273379*
+Password : jfucyzc6
+Investor : 0yzbcfpv
+Capital  : 650
+Leverage : 1:25
+
+Name     : Foo bar
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 69273391*
+Password : ydpguzo4
+Investor : qar3buxz
+Capital  : 650
+Leverage : 1:25
