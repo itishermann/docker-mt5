@@ -6,7 +6,7 @@ services:
     # image: solarkennedy/wine-x11-novnc-docker
     image: gcr.io/ticker-beats/docker-mt5:latest
     ports:
-      - "30014:8080"
+      - "30024:8080"
     environment: 
       WINEPREFIX: "/root/prefix64"
       WINEARCH: win64
