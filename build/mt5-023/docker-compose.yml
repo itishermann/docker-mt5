@@ -62,7 +62,7 @@ services:
       - /home/sander/docker-server/mt5-023/MQL5/Logs/:/root/metatrader5/MQL5/Logs
       - /home/sander/docker-server/mt5-023/MQL5/Files/:/root/metatrader5/MQL5/Files
       - /home/sander/docker-server/mt5-023/MQL5/Presets/:/root/metatrader5/MQL5/Presets
-      - /home/sander/docker-server/dark_venus_set_files/dark-venus-MT5.GBPCAD.H1.20220423.20230424-test-009.set:/root/metatrader5/MQL5/Presets/dark_venus_preset.set
+      - /home/sander/docker-server/dark_venus_set_files/Dark-Venus-MT5.USDJPY.H1.20220509.20230508-test-009.set:/root/metatrader5/MQL5/Presets/dark_venus_preset.set
       - /home/sander/docker-server/mt5-023/MQL5/Profiles/:/root/metatrader5/MQL5/Profiles
       - /home/sander/docker-server/mt5-023/MQL5/experts.dat:/root/metatrader5/MQL5/experts.dat
       # monitor
