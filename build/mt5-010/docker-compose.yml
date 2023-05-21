@@ -72,6 +72,11 @@ services:
       - /home/sander/docker-server/mt5-010-monitor/MQL5/Presets/:/root/metatrader5-monitor/MQL5/Presets
       - /home/sander/docker-server/mt5-010-monitor/MQL5/Profiles/:/root/metatrader5-monitor/MQL5/Profiles
       - /home/sander/docker-server/mt5-010-monitor/MQL5/experts.dat:/root/metatrader5-monitor/MQL5/experts.dat
+    extra_hosts:
+      - "staging.tickerbeats.r6o.co:31.0.10.30"
+      - "test.tickerbeats.r6o.co:31.0.10.30"
+      - "dev.tickerbeats.r6o.co:31.0.10.30"
+      - "prod.tickerbeats.r6o.co:31.0.10.30"
     deploy:
       resources:
         limits:
