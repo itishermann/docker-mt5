@@ -81,3 +81,10 @@ services:
         limits:
           cpus: '4'
           memory: 1024M
+    networks:
+      - mt5_network
+
+networks:
+  mt5_network:
+    driver: bridge
+    external: true
