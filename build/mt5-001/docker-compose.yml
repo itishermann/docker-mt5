@@ -82,3 +82,9 @@ services:
         limits:
           cpus: '5'
           memory: 1024M
+    networks:
+      - mt5-testing-network
+
+networks:
+  mt5-testing-network:
+    driver: bridge
