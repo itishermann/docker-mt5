@@ -83,8 +83,9 @@ services:
           cpus: '5'
           memory: 1024M
     networks:
-      - mt5-testing-network
+      - mt5-001_default
 
 networks:
-  mt5-testing-network:
+  mt5-001_default:
     driver: bridge
+
