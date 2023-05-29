@@ -95,3 +95,39 @@ cd ../mt5-024
 docker compose down && docker compose up -d
 sleep 30
 docker restart mt5-024
+cd ../mt5-025
+docker compose down && docker compose up -d
+sleep 30
+docker restart mt5-025
+cd ../mt5-026
+docker compose down && docker compose up -d
+sleep 30
+docker restart mt5-026
+cd ../mt5-027
+docker compose down && docker compose up -d
+sleep 30
+docker restart mt5-027
+cd ../mt5-028
+docker compose down && docker compose up -d
+sleep 30
+docker restart mt5-028
+cd ../mt5-029
+docker compose down && docker compose up -d
+sleep 30
+docker restart mt5-029
+cd ../mt5-030
+docker compose down && docker compose up -d
+sleep 30
+docker restart mt5-030
+cd ../mt5-031
+docker compose down && docker compose up -d
+sleep 30
+docker restart mt5-031
+cd ../mt5-032
+docker compose down && docker compose up -d
+sleep 30
+docker restart mt5-032
+cd ../mt5-033
+docker compose down && docker compose up -d
+sleep 30
+docker restart mt5-033

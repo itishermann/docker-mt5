@@ -81,7 +81,7 @@ services:
       resources:
         limits:
           cpus: '5'
-          memory: 1024M
+          memory: 1536M
     networks:
       - mt5-001_default
 

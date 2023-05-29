@@ -80,7 +80,7 @@ services:
       resources:
         limits:
           cpus: '4'
-          memory: 1024M
+          memory: 1536M
     networks:
       - mt5-001_default
 
