@@ -7,6 +7,7 @@ services:
     image: gcr.io/ticker-beats/docker-mt5:latest
     ports:
       - "30057:8080"
+    user: root
     environment: 
       WINEPREFIX: "/root/prefix64"
       WINEARCH: win64
@@ -14,6 +15,7 @@ services:
       - ./supervisord.conf/:/etc/supervisor/supervisord.conf
       - ./common.ini/:/root/prefix64/drive_c/myconfiguration.ini
       - ./common-monitor.ini/:/root/prefix64/drive_c/myconfiguration-monitor.ini
+      - /home/sander/docker-server/temp/MetaQuotes:/root/prefix64/drive_c/users/root/Application Data/MetaQuotes
 
       # MT5, base files, can be read-only
       - /home/sander/docker-server/xm/Chats/:/root/metatrader5/Chats
