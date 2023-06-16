@@ -85,9 +85,9 @@ services:
           cpus: '4'
           memory: 1536M
     networks:
-      - mt5-001_default
+      - mt5_default
 
 networks:
-  mt5-001_default:
+  mt5_default:
     driver: bridge
     external: true
