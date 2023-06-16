@@ -90,4 +90,5 @@ services:
 networks:
   mt5_default:
     driver: bridge
+    external: true
 
