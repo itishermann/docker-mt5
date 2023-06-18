@@ -79,6 +79,7 @@ Password : pmt7tsil
 Investor : tyh2eguu
 Capital  : 650
 Leverage : 1:25
+container: mt5-007
 
 Name     : Foo bar
 Type     : Forex Hedged USD
@@ -292,3 +293,322 @@ Investor : gneqqr1h
 Capital  : 650
 Leverage : 1:25
 container: mt5-029
+
+Name     : MyOwn Test
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 5013691655
+Password : znzcadt0
+Investor : brxjubo8
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66293200
+Password : 5ntvbsfoW5jb?sA
+Investor :
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66312124*
+Password : 5ntvbsfoW5jb?sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-030
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66312353*
+Password : 5ntvbsfoW5jb?sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-031
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66312428*
+Password : 5ntvbsfoW5jb?sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-032
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66312433*
+Password : 5ntvbsfoW5jb?sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-033
+
+---xm01@ruscigno.com.br-----------------
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345412*
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 10000
+Leverage : 1:25
+container: mt5-034
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345417*
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-035
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345421
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-036
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345425
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-037
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345430
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-038
+
+---xm02@ruscigno.com.br-----------------
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345432
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 10000
+Leverage : 1:25
+container: mt5-039
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345433
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-040
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345437
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-041
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345440
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-042
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345443
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-043
+
+---xm03@ruscigno.com.br-----------------
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345453
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 10000
+Leverage : 1:25
+container: mt5-044
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345455
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-045
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345456
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-046
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345457
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-047
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66345461
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-048
+
+---xm04@ruscigno.com.br-----------------
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66348143
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 10000
+Leverage : 1:25
+container: mt5-049
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66348149
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-050
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66348150
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-051
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66348153
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-052
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66348154
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-053
+
+---xm05@ruscigno.com.br-----------------
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66348161
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 10000
+Leverage : 1:25
+container: mt5-054
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66348165
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-055
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66348167
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-056
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66348169
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-057
+
+Name     : XM Own Test
+Type     : XM Global
+Server   : XMGlobal-MT5 2
+Login    : 66348172
+Password : 5ntvbsfoW5jb_sA
+Investor :
+Capital  : 1000
+Leverage : 1:25
+container: mt5-058
+
+Name     : Test Best tickers
+Type     : Forex Hedged USD
+Server   : MetaQuotes-Demo
+Login    : 70508194
+Password : 4bqyntzl
+Investor :
+Capital  : 100000
+Leverage : 1:25
+container: mt5-059
