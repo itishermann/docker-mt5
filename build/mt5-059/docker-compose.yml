@@ -73,7 +73,7 @@ services:
       - /home/sander/docker-server/mt5-059-monitor/MQL5/Presets/:/root/metatrader5-monitor/MQL5/Presets
       - /home/sander/docker-server/mt5-059-monitor/MQL5/Profiles/:/root/metatrader5-monitor/MQL5/Profiles
       - /home/sander/docker-server/mt5-059-monitor/MQL5/experts.dat:/root/metatrader5-monitor/MQL5/experts.dat
-      - /home/sander/docker-server/dark_venus_set_files/pro-settings-monitor.set:/root/metatrader5/MQL5/Presets/pro-settings-monitor.set
+      - /home/sander/docker-server/dark_venus_set_files/pro-settings-monitor.set:/root/metatrader5-monitor/MQL5/Presets/pro-settings-monitor.set
     extra_hosts:
       - "staging.tickerbeats.r6o.co:31.0.10.30"
       - "test.tickerbeats.r6o.co:31.0.10.30"
