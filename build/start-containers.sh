@@ -287,3 +287,8 @@ cd ../mt5-058
 docker compose down && docker compose up -d
 sleep 30
 docker restart mt5-058
+
+cd ../mt5-059
+docker compose down && docker compose up -d
+sleep 30
+docker restart mt5-059
