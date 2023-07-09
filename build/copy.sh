@@ -1,28 +1,20 @@
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-002 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-002-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-003 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-003-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-004 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-004-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-005 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-005-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-006 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-006-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-007 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-007-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-008 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-008-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-009 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-009-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-010 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-010-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-011 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-011-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-012 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-012-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-013 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-013-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-014 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-014-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-015 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-015-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-016 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-016-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-017 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-017-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-018 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-018-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-019 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-019-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-020 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-020-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-021 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-021-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-022 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-022-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-023 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-023-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-024 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-024-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-025 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-025-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-026 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-026-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-027 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-027-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-028 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-028-monitor
-cp -R ~/docker-server/mt5-001 ~/docker-server/mt5-029 && cp -R ~/docker-server/mt5-001-monitor ~/docker-server/mt5-029-monitor
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+  echo "Usage: $0 <start_number> <end_number>"
+  exit 1
+fi
+
+start=$1
+end=$2
+
+for ((num=start; num<=end; num++))
+do
+  container_name="mt5-$(printf "%03d" $num)"
+  echo "copying container: $container_name"
+
+  sudo rm -R ~/docker-server/"$container_name"
+  sudo rm -R ~/docker-server/"$container_name"-monitor
+  sudo cp -R ~/docker-server/mt5-template ~/docker-server/"$container_name"
+  sudo cp -R ~/docker-server/mt5-template ~/docker-server/"$container_name"-monitor
+done
