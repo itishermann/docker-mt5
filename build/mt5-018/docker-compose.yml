@@ -24,15 +24,15 @@ services:
       - /home/sander/docker-server/docker-mt5-base-files/Market/:/root/metatrader5/Market
       - /home/sander/docker-server/docker-mt5-base-files/Sounds/:/root/metatrader5/Sounds
       - /home/sander/docker-server/docker-mt5-base-files/Tester/:/root/metatrader5/Tester
-      - /home/sander/docker-server/docker-mt5-base-files/metaeditor64.exe:/root/metatrader5/metaeditor64.exe
-      - /home/sander/docker-server/docker-mt5-base-files/terminal64.exe:/root/metatrader5/terminal64.exe
+      - /home/sander/docker-server/docker-mt5-base-files/metaeditor64.exe:/root/metatrader5/metaeditor64.exe:ro
+      - /home/sander/docker-server/docker-mt5-base-files/terminal64.exe:/root/metatrader5/terminal64.exe:ro
       # monitor
       - /home/sander/docker-server/docker-mt5-base-files/Chats/:/root/metatrader5-monitor/Chats
       - /home/sander/docker-server/docker-mt5-base-files/Market/:/root/metatrader5-monitor/Market
       - /home/sander/docker-server/docker-mt5-base-files/Sounds/:/root/metatrader5-monitor/Sounds
       - /home/sander/docker-server/docker-mt5-base-files/Tester/:/root/metatrader5-monitor/Tester
-      - /home/sander/docker-server/docker-mt5-base-files/metaeditor64.exe:/root/metatrader5-monitor/metaeditor64.exe
-      - /home/sander/docker-server/docker-mt5-base-files/terminal64.exe:/root/metatrader5-monitor/terminal64.exe
+      - /home/sander/docker-server/docker-mt5-base-files/metaeditor64.exe:/root/metatrader5-monitor/metaeditor64.exe:ro
+      - /home/sander/docker-server/docker-mt5-base-files/terminal64.exe:/root/metatrader5-monitor/terminal64.exe:ro
       # MQL5, base files, can be read-only
       - /home/sander/docker-server/docker-mql5-base-files/MQL5/Experts/:/root/metatrader5/MQL5/Experts
       - /home/sander/docker-server/docker-mql5-base-files/MQL5/Images/:/root/metatrader5/MQL5/Images
