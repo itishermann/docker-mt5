@@ -27,6 +27,3 @@ do
   sleep 20
   cd ..
 done
-
-
-mt5-030
