@@ -22,7 +22,11 @@ do
   cd ./"$container_name"
   docker compose down && docker compose up -d
   sleep 20
+  sudo rm -R /home/sander/docker-server/temp/MetaQuotes/Terminal/*
   docker restart "$container_name"
   sleep 20
   cd ..
 done
+
+
+mt5-030
