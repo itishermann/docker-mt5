@@ -63,7 +63,7 @@ services:
       - /home/sander/docker-server/mt5-063/MQL5/Logs/:/root/metatrader5/MQL5/Logs
       - /home/sander/docker-server/mt5-063/MQL5/Files/:/root/metatrader5/MQL5/Files
       - /home/sander/docker-server/mt5-063/MQL5/Presets/:/root/metatrader5/MQL5/Presets
-      # - /home/sander/docker-server/dark_venus_set_files/pro-settings-dark-venus.set:/root/metatrader5/MQL5/Presets/pro-settings-dark-venus.set
+      - /home/sander/docker-server/dark_venus_set_files/mt5-063.set:/root/metatrader5/MQL5/Presets/pro-settings-dark-venus.set
       - /home/sander/docker-server/mt5-063/MQL5/Profiles/:/root/metatrader5/MQL5/Profiles
       - /home/sander/docker-server/mt5-063/MQL5/experts.dat:/root/metatrader5/MQL5/experts.dat
       # monitor
