@@ -1,7 +1,7 @@
 version: "3.3"
 services:
-  mt5-test:
-    container_name: mt5-test
+  mt5-999:
+    container_name: mt5-999
     restart: unless-stopped
     # image: solarkennedy/wine-x11-novnc-docker
     image: gcr.io/ticker-beats/docker-mt5:latest
@@ -51,28 +51,28 @@ services:
       - "/home/sander/docker-server/xm/MQL5/Shared Projects/:/root/metatrader5-monitor/MQL5/Shared Projects"
 
       # MT5, container files
-      - /home/sander/docker-server/mt5-test/Bases/:/root/metatrader5/Bases
-      - /home/sander/docker-server/mt5-test/Config/:/root/metatrader5/Config
-      - /home/sander/docker-server/mt5-test/Profiles/:/root/metatrader5/Profiles
+      - /home/sander/docker-server/mt5-999/Bases/:/root/metatrader5/Bases
+      - /home/sander/docker-server/mt5-999/Config/:/root/metatrader5/Config
+      - /home/sander/docker-server/mt5-999/Profiles/:/root/metatrader5/Profiles
       # monitor
-      - /home/sander/docker-server/mt5-test-monitor/Bases/:/root/metatrader5-monitor/Bases
-      - /home/sander/docker-server/mt5-test-monitor/Config/:/root/metatrader5-monitor/Config
-      - /home/sander/docker-server/mt5-test-monitor/Profiles/:/root/metatrader5-monitor/Profiles
+      - /home/sander/docker-server/mt5-999-monitor/Bases/:/root/metatrader5-monitor/Bases
+      - /home/sander/docker-server/mt5-999-monitor/Config/:/root/metatrader5-monitor/Config
+      - /home/sander/docker-server/mt5-999-monitor/Profiles/:/root/metatrader5-monitor/Profiles
       # MQL5, container files
-      - /home/sander/docker-server/mt5-test/logs/:/root/metatrader5/logs
-      - /home/sander/docker-server/mt5-test/MQL5/Logs/:/root/metatrader5/MQL5/Logs
-      - /home/sander/docker-server/mt5-test/MQL5/Files/:/root/metatrader5/MQL5/Files
-      - /home/sander/docker-server/mt5-test/MQL5/Presets/:/root/metatrader5/MQL5/Presets
-      - /home/sander/docker-server/dark_venus_set_files/mt5-test.set:/root/metatrader5/MQL5/Presets/dark_venus_preset.set
-      - /home/sander/docker-server/mt5-test/MQL5/Profiles/:/root/metatrader5/MQL5/Profiles
-      - /home/sander/docker-server/mt5-test/MQL5/experts.dat:/root/metatrader5/MQL5/experts.dat
+      - /home/sander/docker-server/mt5-999/logs/:/root/metatrader5/logs
+      - /home/sander/docker-server/mt5-999/MQL5/Logs/:/root/metatrader5/MQL5/Logs
+      - /home/sander/docker-server/mt5-999/MQL5/Files/:/root/metatrader5/MQL5/Files
+      - /home/sander/docker-server/mt5-999/MQL5/Presets/:/root/metatrader5/MQL5/Presets
+      - /home/sander/docker-server/dark_venus_set_files/mt5-999.set:/root/metatrader5/MQL5/Presets/dark_venus_preset.set
+      - /home/sander/docker-server/mt5-999/MQL5/Profiles/:/root/metatrader5/MQL5/Profiles
+      - /home/sander/docker-server/mt5-999/MQL5/experts.dat:/root/metatrader5/MQL5/experts.dat
       # monitor
-      - /home/sander/docker-server/mt5-test-monitor/logs/:/root/metatrader5-monitor/logs
-      - /home/sander/docker-server/mt5-test-monitor/MQL5/Logs/:/root/metatrader5-monitor/MQL5/Logs
-      - /home/sander/docker-server/mt5-test-monitor/MQL5/Files/:/root/metatrader5-monitor/MQL5/Files
-      - /home/sander/docker-server/mt5-test-monitor/MQL5/Presets/:/root/metatrader5-monitor/MQL5/Presets
-      - /home/sander/docker-server/mt5-test-monitor/MQL5/Profiles/:/root/metatrader5-monitor/MQL5/Profiles
-      - /home/sander/docker-server/mt5-test-monitor/MQL5/experts.dat:/root/metatrader5-monitor/MQL5/experts.dat
+      - /home/sander/docker-server/mt5-999-monitor/logs/:/root/metatrader5-monitor/logs
+      - /home/sander/docker-server/mt5-999-monitor/MQL5/Logs/:/root/metatrader5-monitor/MQL5/Logs
+      - /home/sander/docker-server/mt5-999-monitor/MQL5/Files/:/root/metatrader5-monitor/MQL5/Files
+      - /home/sander/docker-server/mt5-999-monitor/MQL5/Presets/:/root/metatrader5-monitor/MQL5/Presets
+      - /home/sander/docker-server/mt5-999-monitor/MQL5/Profiles/:/root/metatrader5-monitor/MQL5/Profiles
+      - /home/sander/docker-server/mt5-999-monitor/MQL5/experts.dat:/root/metatrader5-monitor/MQL5/experts.dat
       - /home/sander/docker-server/dark_venus_set_files/pro-settings-monitor.set:/root/metatrader5-monitor/MQL5/Presets/pro-settings-monitor.set
     extra_hosts:
       - "staging.tickerbeats.r6o.co:31.0.10.30"
