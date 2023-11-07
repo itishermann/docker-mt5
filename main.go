@@ -129,6 +129,16 @@ func main() {
 	}
 	zap.L().Info("Settings loaded", zap.Any("settings", config))
 
+	args := os.Args[1:] // get command line arguments excluding the program name
+
+    if len(args) == 0 {
+        fmt.Println("Usage: myprogram [command]")
+        os.Exit(1)
+    }
+
+    switch args[0] {
+		case "load":
+												
 	e := echo.New()
 	// e.Use(echozap.ZapLogger(logger))
 	e.GET("/", func(c echo.Context) error {
