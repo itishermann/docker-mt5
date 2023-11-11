@@ -7,16 +7,27 @@ services:
     image: gcr.io/ticker-beats/docker-mt5:latest
     ports:
       - "30001:8080"
+      - "8001:8000"
     user: root
     environment: 
       WINEPREFIX: "/root/prefix64"
       WINEARCH: win64
+      LOG_FOLDER_PATH: "/root/metatrader5-monitor/logs"
+    healthcheck:
+      test: curl --fail 'http://mt5-server-01:8001/health' || exit 1
+      interval: 60s
+      retries: 5
+      start_period: 60s
+      timeout: 10s
     volumes:
       - ./supervisord.conf/:/etc/supervisor/supervisord.conf
       - ./common.ini/:/root/prefix64/drive_c/myconfiguration.ini
       - ./common-monitor.ini/:/root/prefix64/drive_c/myconfiguration-monitor.ini
       - /home/sander/docker-server/temp/MetaQuotes:/root/prefix64/drive_c/users/root/Application Data/MetaQuotes
 
+      # Health check
+      - /home/sander/docker-server/docker-mt5-health-check:/root/docker-mt5-health-check
+      
       # MT5, base files, can be read-only
       - /home/sander/docker-server/docker-mt5-base-files/Chats/:/root/metatrader5/Chats
       - /home/sander/docker-server/docker-mt5-base-files/Market/:/root/metatrader5/Market
