@@ -2,7 +2,7 @@ version: "3.3"
 services:
   mt5-026:
     container_name: mt5-026
-    restart: unless-stopped
+    restart: no
     # image: solarkennedy/wine-x11-novnc-docker
     image: gcr.io/ticker-beats/docker-mt5:latest
     ports:
