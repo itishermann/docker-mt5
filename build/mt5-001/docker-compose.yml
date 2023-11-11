@@ -2,7 +2,7 @@ version: "3.3"
 services:
   mt5-001:
     container_name: mt5-001
-    restart: no
+    restart: unless-stopped
     # image: solarkennedy/wine-x11-novnc-docker
     image: gcr.io/ticker-beats/docker-mt5:latest
     ports:
@@ -17,7 +17,7 @@ services:
       test: curl --fail 'http://mt5-server-01:8001/health' || exit 1
       interval: 60s
       retries: 5
-      start_period: 60s
+      start_period: 10s
       timeout: 10s
     volumes:
       - ./supervisord.conf/:/etc/supervisor/supervisord.conf
@@ -27,7 +27,7 @@ services:
 
       # Health check
       - /home/sander/docker-server/docker-mt5-health-check:/root/docker-mt5-health-check
-      
+
       # MT5, base files, can be read-only
       - /home/sander/docker-server/docker-mt5-base-files/Chats/:/root/metatrader5/Chats
       - /home/sander/docker-server/docker-mt5-base-files/Market/:/root/metatrader5/Market
