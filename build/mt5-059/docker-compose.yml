@@ -2,7 +2,7 @@ version: "3.3"
 services:
   mt5-059:
     container_name: mt5-059
-    restart: no
+    restart: unless-stopped
     # image: solarkennedy/wine-x11-novnc-docker
     image: gcr.io/ticker-beats/docker-mt5:latest
     ports:
