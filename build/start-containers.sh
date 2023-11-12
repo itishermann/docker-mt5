@@ -21,9 +21,9 @@ do
   sudo rm -R /home/sander/docker-server/temp/MetaQuotes/Terminal/*
   cd ./"$container_name"
   docker compose down && docker compose up -d
-  sleep 20
-  sudo rm -R /home/sander/docker-server/temp/MetaQuotes/Terminal/*
-  docker restart "$container_name"
-  sleep 20
+#  sleep 2
+#  sudo rm -R /home/sander/docker-server/temp/MetaQuotes/Terminal/*
+#  docker restart "$container_name"
+#  sleep 1
   cd ..
 done
