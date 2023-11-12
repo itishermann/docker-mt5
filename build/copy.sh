@@ -17,4 +17,5 @@ do
   sudo rm -R ~/docker-server/"$container_name"-monitor
   sudo cp -R ~/docker-server/mt5-template ~/docker-server/"$container_name"
   sudo cp -R ~/docker-server/mt5-template ~/docker-server/"$container_name"-monitor
+  sudo chown sander:sander -R ~/docker-server
 done

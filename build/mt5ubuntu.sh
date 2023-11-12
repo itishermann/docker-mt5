@@ -33,6 +33,8 @@ fi
 sudo apt update
 sudo apt upgrade
 sudo apt install --install-recommends winehq-$WINE_VERSION
+sudo apt install curl nano wget
+
 
 # Download MetaTrader
 wget $URL
