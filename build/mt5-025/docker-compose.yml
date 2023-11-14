@@ -11,7 +11,7 @@ services:
     environment: 
       WINEPREFIX: "/root/prefix64"
       WINEARCH: win64
-      LOG_FOLDER_PATH: "/root/metatrader5-monitor/MQL5/Logs"
+      LOG_FOLDER_PATH: "/root/metatrader5-monitor/MQL5/Logs;/root/metatrader5-monitor/MQL5/Files"
     healthcheck:
       test: curl --fail 'http://localhost:8000/health' || exit 1
       interval: 60s

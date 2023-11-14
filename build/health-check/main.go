@@ -22,9 +22,10 @@ type Counter struct {
 }
 
 const (
-	EncodingUTF8    = "UTF-8"
-	EncodingUTF16LE = "UTF-16 LE"
-	MaxWaitTime     = 20 * time.Second
+	EncodingUTF8      = "UTF-8"
+	EncodingUTF16LE   = "UTF-16 LE"
+	MaxWaitTime       = 20 * time.Second
+	healthCheckString = "health-check alive"
 )
 
 var lastCheckedTime = time.Now()
@@ -37,20 +38,24 @@ func main() {
 	//get from the environment variable
 	folderPath := os.Getenv("LOG_FOLDER_PATH")
 	if folderPath == "" {
-		folderPath = "/root/metatrader5-monitor/logs"
+		folderPath = "/root/metatrader5-monitor/MQL5/Files;../"
 	}
-
+	paths := strings.Split(folderPath, ";")
 	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
-		result, err := checkLatestLog(folderPath)
-		if (result && err == nil) || lastCheckedTime.After(time.Now().Add(-MaxWaitTime)) {
-			w.WriteHeader(http.StatusOK)
-			response := Counter{
-				Counter: lastCounter,
-				LastLog: lastLog,
+		var err error
+		var result bool
+		for _, path := range paths {
+			result, err = checkLatestLog(path)
+			if result && err == nil {
+				w.WriteHeader(http.StatusOK)
+				response := Counter{
+					Counter: lastCounter,
+					LastLog: lastLog,
+				}
+				w.Header().Set("Content-Type", "application/json")
+				json.NewEncoder(w).Encode(response)
+				return
 			}
-			w.Header().Set("Content-Type", "application/json")
-			json.NewEncoder(w).Encode(response)
-			return
 		}
 		// If the log file is not found or the entry is not recent, return 500 and the error message in the body
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -98,11 +103,6 @@ func main() {
 
 // checkLatestLog checks the most recent log file for the "health check-alive" entry.
 func checkLatestLog(folder string) (bool, error) {
-	// if lastCheckedTime is less than 10s old, return true
-	if lastCheckedTime.After(time.Now().Add(-10 * time.Second)) {
-		return true, nil
-	}
-
 	files, err := ioutil.ReadDir(folder)
 	if err != nil {
 		fmt.Println("Error reading directory:", err)
@@ -153,7 +153,7 @@ func checkFileForHealthEntry(filePath, encoding string) (bool, error) {
 	}
 	occurrencies := 0
 	for _, line := range lines {
-		if strings.Contains(line, "health check-alive") && isEntryRecent(line) {
+		if strings.Contains(line, healthCheckString) && isEntryRecent(line) {
 			occurrencies++
 		}
 	}
@@ -170,16 +170,20 @@ func checkFileForHealthEntry(filePath, encoding string) (bool, error) {
 func isEntryRecent(line string) bool {
 	const layout1 = "2006-01-02 15:04:05.000"
 	const layout2 = "2006-01-02"
+	const layout3 = "2006.01.02 15:04:05"
 	parts := strings.Split(line, "\t")
-	if len(parts) < 3 {
+	if len(parts) < 2 {
 		return false
 	}
 	// prints current date
-	timeStr := fmt.Sprintf("%s %s", time.Now().UTC().Format(layout2), parts[2])
-	t, err := time.Parse(layout1, timeStr)
+	t, err := time.Parse(layout3, parts[0])
 	if err != nil {
-		fmt.Println("Error parsing time:", err)
-		return false
+		timeStr := fmt.Sprintf("%s %s", time.Now().UTC().Format(layout2), parts[0])
+		t, err = time.Parse(layout1, timeStr)
+		if err != nil {
+			fmt.Println("Error parsing time:", err)
+			return false
+		}
 	}
 	if t.After(lastLog) {
 		lastLog = t
@@ -193,7 +197,6 @@ func isEntryRecent(line string) bool {
 }
 
 func readFileUTF16(filename string) ([]byte, error) {
-
 	// Read the file into a []byte:
 	raw, err := ioutil.ReadFile(filename)
 	if err != nil {
