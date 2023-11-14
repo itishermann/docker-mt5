@@ -14,8 +14,8 @@ do
   container_name="mt5-$(printf "%03d" $num)"
   echo "Restarting container: $container_name"
   docker restart "$container_name"
-  sleep 20
-  sudo rm -R /home/sander/docker-server/temp/MetaQuotes/Terminal/*
-  docker restart "$container_name"
-  sleep 20
+#  sleep 20
+#  sudo rm -R /home/sander/docker-server/temp/MetaQuotes/Terminal/*
+#  docker restart "$container_name"
+#  sleep 20
 done
