@@ -7,7 +7,7 @@ fi
 
 start=$1
 end=$2
-compose_file="./docker-compose-XM.yml"
+compose_file="./docker-compose.yml"
 
 for ((num=start; num<=end; num++))
 do

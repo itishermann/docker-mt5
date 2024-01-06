@@ -4,7 +4,7 @@ services:
     container_name: mt5-023
     restart: unless-stopped
     # image: solarkennedy/wine-x11-novnc-docker
-    image: gcr.io/ticker-beats/docker-mt5:latest
+    image: gcr.io/ticker-beats/docker-mt5:xm
     ports:
       - "30023:8080"
     user: root
@@ -14,76 +14,28 @@ services:
       LOG_FOLDER_PATH: "/root/metatrader5-monitor/MQL5/Logs;/root/metatrader5-monitor/MQL5/Files"
     healthcheck:
       test: curl --fail 'http://localhost:8000/health' || exit 1
-      interval: 60s
-      retries: 5
+      interval: 10s
+      retries: 6
       start_period: 10s
-      timeout: 10s
+      timeout: 5s
     volumes:
       - ./supervisord.conf/:/etc/supervisor/supervisord.conf
       - ./common.ini/:/root/prefix64/drive_c/myconfiguration.ini
       - ./common-monitor.ini/:/root/prefix64/drive_c/myconfiguration-monitor.ini
       - /home/sander/docker-server/temp/MetaQuotes:/root/prefix64/drive_c/users/root/Application Data/MetaQuotes
 
+      - /home/sander/docker-server/mt5-023:/root/metatrader5
+      - /home/sander/docker-server/docker-mql5-base-files/MQL5:/root/metatrader5/MQL5
+
+      - /home/sander/docker-server/mt5-023-monitor:/root/metatrader5-monitor
+      - /home/sander/docker-server/docker-mql5-base-files/MQL5:/root/metatrader5-monitor/MQL5
+      - /home/sander/docker-server/mt5-023-monitor/health-check.log:/root/metatrader5-monitor/MQL5/Files/health-check.log
+
       # Health check
       - /home/sander/docker-server/docker-mt5-health-check:/root/docker-mt5-health-check
 
-      # MT5, base files, can be read-only
-      - /home/sander/docker-server/docker-mt5-base-files/Chats/:/root/metatrader5/Chats
-      - /home/sander/docker-server/docker-mt5-base-files/Market/:/root/metatrader5/Market
-      - /home/sander/docker-server/docker-mt5-base-files/Sounds/:/root/metatrader5/Sounds
-      - /home/sander/docker-server/docker-mt5-base-files/Tester/:/root/metatrader5/Tester
-      - /home/sander/docker-server/docker-mt5-base-files/metaeditor64.exe:/root/metatrader5/metaeditor64.exe:ro
-      - /home/sander/docker-server/docker-mt5-base-files/terminal64.exe:/root/metatrader5/terminal64.exe:ro
-      # monitor
-      - /home/sander/docker-server/docker-mt5-base-files/Chats/:/root/metatrader5-monitor/Chats
-      - /home/sander/docker-server/docker-mt5-base-files/Market/:/root/metatrader5-monitor/Market
-      - /home/sander/docker-server/docker-mt5-base-files/Sounds/:/root/metatrader5-monitor/Sounds
-      - /home/sander/docker-server/docker-mt5-base-files/Tester/:/root/metatrader5-monitor/Tester
-      - /home/sander/docker-server/docker-mt5-base-files/metaeditor64.exe:/root/metatrader5-monitor/metaeditor64.exe:ro
-      - /home/sander/docker-server/docker-mt5-base-files/terminal64.exe:/root/metatrader5-monitor/terminal64.exe:ro
-      # MQL5, base files, can be read-only
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Experts/:/root/metatrader5/MQL5/Experts
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Images/:/root/metatrader5/MQL5/Images
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Include/:/root/metatrader5/MQL5/Include
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Indicators/:/root/metatrader5/MQL5/Indicators
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Libraries/:/root/metatrader5/MQL5/Libraries
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Scripts/:/root/metatrader5/MQL5/Scripts
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Services/:/root/metatrader5/MQL5/Services
-      - "/home/sander/docker-server/docker-mql5-base-files/MQL5/Shared Projects/:/root/metatrader5/MQL5/Shared Projects"
-      # monitor
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Experts/:/root/metatrader5-monitor/MQL5/Experts
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Images/:/root/metatrader5-monitor/MQL5/Images
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Include/:/root/metatrader5-monitor/MQL5/Include
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Indicators/:/root/metatrader5-monitor/MQL5/Indicators
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Libraries/:/root/metatrader5-monitor/MQL5/Libraries
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Scripts/:/root/metatrader5-monitor/MQL5/Scripts
-      - /home/sander/docker-server/docker-mql5-base-files/MQL5/Services/:/root/metatrader5-monitor/MQL5/Services
-      - "/home/sander/docker-server/docker-mql5-base-files/MQL5/Shared Projects/:/root/metatrader5-monitor/MQL5/Shared Projects"
-
-
-      # MT5, container files
-      - /home/sander/docker-server/mt5-023/Bases/:/root/metatrader5/Bases
-      - /home/sander/docker-server/mt5-023/Config/:/root/metatrader5/Config
-      - /home/sander/docker-server/mt5-023/Profiles/:/root/metatrader5/Profiles
-      # monitor
-      - /home/sander/docker-server/mt5-023-monitor/Bases/:/root/metatrader5-monitor/Bases
-      - /home/sander/docker-server/mt5-023-monitor/Config/:/root/metatrader5-monitor/Config
-      - /home/sander/docker-server/mt5-023-monitor/Profiles/:/root/metatrader5-monitor/Profiles
       # MQL5, container files
-      - /home/sander/docker-server/mt5-023/logs/:/root/metatrader5/logs
-      - /home/sander/docker-server/mt5-023/MQL5/Logs/:/root/metatrader5/MQL5/Logs
-      - /home/sander/docker-server/mt5-023/MQL5/Files/:/root/metatrader5/MQL5/Files
-      - /home/sander/docker-server/mt5-023/MQL5/Presets/:/root/metatrader5/MQL5/Presets
       - /home/sander/docker-server/dark_venus_set_files/Dark-Venus-MT5.USDJPY.H1.20220509.20230508-test-009.set:/root/metatrader5/MQL5/Presets/dark_venus_preset.set
-      - /home/sander/docker-server/mt5-023/MQL5/Profiles/:/root/metatrader5/MQL5/Profiles
-      - /home/sander/docker-server/mt5-023/MQL5/experts.dat:/root/metatrader5/MQL5/experts.dat
-      # monitor
-      - /home/sander/docker-server/mt5-023-monitor/logs/:/root/metatrader5-monitor/logs
-      - /home/sander/docker-server/mt5-023-monitor/MQL5/Logs/:/root/metatrader5-monitor/MQL5/Logs
-      - /home/sander/docker-server/mt5-023-monitor/MQL5/Files/:/root/metatrader5-monitor/MQL5/Files
-      - /home/sander/docker-server/mt5-023-monitor/MQL5/Presets/:/root/metatrader5-monitor/MQL5/Presets
-      - /home/sander/docker-server/mt5-023-monitor/MQL5/Profiles/:/root/metatrader5-monitor/MQL5/Profiles
-      - /home/sander/docker-server/mt5-023-monitor/MQL5/experts.dat:/root/metatrader5-monitor/MQL5/experts.dat
     extra_hosts:
       - "staging.tickerbeats.r6o.co:31.0.10.30"
       - "test.tickerbeats.r6o.co:31.0.10.30"
@@ -92,7 +44,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '4'
+          cpus: '2'
           memory: 1536M
     networks:
       - mt5_default
@@ -101,3 +53,4 @@ networks:
   mt5_default:
     driver: bridge
     external: true
+

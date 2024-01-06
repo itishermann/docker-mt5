@@ -29,7 +29,7 @@ services:
 
       - /home/sander/docker-server/mt5-{container-number}-monitor:/root/metatrader5-monitor
       - /home/sander/docker-server/docker-mql5-base-files/MQL5:/root/metatrader5-monitor/MQL5
-      - ./health-check.log:/root/metatrader5-monitor/MQL5/Files/health-check.log
+      - /home/sander/docker-server/mt5-{container-number}-monitor/health-check.log:/root/metatrader5-monitor/MQL5/Files/health-check.log
 
       # Health check
       - /home/sander/docker-server/docker-mt5-health-check:/root/docker-mt5-health-check
