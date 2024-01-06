@@ -5,7 +5,7 @@ MQL5_IMAGE_NAME = gcr.io/ticker-beats/docker-mt5
 # set the MQL5_IMAGE_VERSION variable
 # It should consist of the version of the image
 # use hyphens as separator
-MQL5_IMAGE_VERSION = 2
+MQL5_IMAGE_VERSION = 2.0.8
 # set the MQL5_IMAGE_TAG variable
 # It should consist of the MQL5_IMAGE_NAME and MQL5_IMAGE_VERSION
 # use colon as separator
