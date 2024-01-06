@@ -1,0 +1,56 @@
+version: "3.3"
+services:
+  mt5-039:
+    container_name: mt5-039
+    restart: unless-stopped
+    # image: solarkennedy/wine-x11-novnc-docker
+    image: gcr.io/ticker-beats/docker-mt5:xm
+    ports:
+      - "30039:8080"
+    user: root
+    environment: 
+      WINEPREFIX: "/root/prefix64"
+      WINEARCH: win64
+      LOG_FOLDER_PATH: "/root/metatrader5-monitor/MQL5/Logs;/root/metatrader5-monitor/MQL5/Files"
+    healthcheck:
+      test: curl --fail 'http://localhost:8000/health' || exit 1
+      interval: 10s
+      retries: 6
+      start_period: 10s
+      timeout: 5s
+    volumes:
+      - ./supervisord.conf/:/etc/supervisor/supervisord.conf
+      - ./common.ini/:/root/prefix64/drive_c/myconfiguration.ini
+      - ./common-monitor.ini/:/root/prefix64/drive_c/myconfiguration-monitor.ini
+      - /home/sander/docker-server/temp/MetaQuotes:/root/prefix64/drive_c/users/root/Application Data/MetaQuotes
+
+      - /home/sander/docker-server/mt5-039:/root/metatrader5
+      - /home/sander/docker-server/docker-mql5-base-files/MQL5:/root/metatrader5/MQL5
+
+      - /home/sander/docker-server/mt5-039-monitor:/root/metatrader5-monitor
+      - /home/sander/docker-server/docker-mql5-base-files/MQL5:/root/metatrader5-monitor/MQL5
+      - /home/sander/docker-server/mt5-039-monitor/health-check.log:/root/metatrader5-monitor/MQL5/Files/health-check.log
+
+      # Health check
+      - /home/sander/docker-server/docker-mt5-health-check:/root/docker-mt5-health-check
+
+      # MQL5, container files
+      - /home/sander/docker-server/dark_venus_set_files/Dark-Venus-MT5.Amazon.H1.20220529.20230528-test-02.set:/root/metatrader5/MQL5/Presets/dark_venus_preset.set
+    extra_hosts:
+      - "staging.tickerbeats.r6o.co:31.0.10.30"
+      - "test.tickerbeats.r6o.co:31.0.10.30"
+      - "dev.tickerbeats.r6o.co:31.0.10.30"
+      - "prod.tickerbeats.r6o.co:31.0.10.30"
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 1536M
+    networks:
+      - mt5_default
+
+networks:
+  mt5_default:
+    driver: bridge
+    external: true
+

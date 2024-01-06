@@ -1,0 +1,3 @@
+{
+    "database_dsn": "postgres://sander:sander@personal-dev/metatrader5?sslmode=disable"
+}
